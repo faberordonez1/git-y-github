@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Curso Profesional de Git</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Curso Profesional de Git</h1>
+
+      <div class="container mt-5">
+        <h2>¿Qué es un Sistema Control de Versiones?</h2>
+        <a
+          href="https://static.platzi.com/media/public/uploads/GIT%20intro_9be7cd0c-f674-4a0f-8bd4-0eac7775da60.pdf"
+          target="_blank"
+          >Ver presentacion</a
+        >
+        <a
+          href="https://docs.google.com/document/d/11L_hhRoqpE-3rLJ6AtwT8Riju-Oc6ys1HRKEItF9Cz4/edit?usp=sharing"
+          target="_blank"
+          >Libro Fundamentos de Git</a
+        >
+        <a href="https://git-scm.com/book/es/v2" target="_blank"> Git Book</a>
+        <p>
+          Un sistema que registra los cambios realizados sobre un archivo o
+          conjunto de archivos a lo largo del tiempo. Este tipo de sistemas nos
+          permiten volver en el tiempo y salvar nuestro trabajo.
+        </p>
+        <h5>Existen 3 tipos</h5>
+        <ul>
+          <li><strong>Local: </strong> Solo vive en nuestro computador.</li>
+          <li>
+            <strong>Centralizado: </strong>No depende únicamente de un
+            computador en el que se trabaja, sino que depende del súper servidor
+            en donde se almacena la información. El servidor provee las copias a
+            sus hijos, pero solo guarda los cambios en un solo lugar
+          </li>
+          <li>
+            <strong>Sistema de control distribuidos: </strong>Cada uno de los
+            que participan en el proyecto, tienen copia del proyecto que se
+            realiza, por eso no dependemos de un solo computador que almacene
+            toda la información.
+          </li>
+        </ul>
+        <p>Git es un Sistema de Control de Versiones Distribuido.</p>
+      </div>
+      <div class="container mt-5">
+        <h2>Git</h2>
+        <p>
+          ¿Cómo nace Git? El sistema open source de **Linux necesitaba estar en
+          un sistema de control de versiones, entonces Linus Torvalds lo creo
+          enfocado en lo siguiente:
+        </p>
+        <p>
+          <strong>Velocidad:</strong> Puedes trabajar fluidamente desde tu
+          computador <br /><strong>Diseño sencillo:</strong> El codigo es
+          robusto con las herramientas necesarias, como viajar en el tiempo
+          <br /><strong>Fuerte apoyo en el desarrollo no lineal:</strong> No es
+          necesario seguir un camino predefinido para trabajar. Es decir puedes
+          crear otras cosas que no estaban definidas. Al final, en algún punto
+          las podrás agregar a tu proyecto.<br /><strong
+            >Completamente distribuido:</strong
+          >
+          Cada quien puede tener una copia del proyecto, el repositorio
+          principal es casi imposible perderlo <br /><strong
+            >Capaz de manejar grandes proyectos:</strong
+          >
+          Linux, Django, Laravel, etc. Usan git
+        </p>
+        <h5>¿Qué diferencia a Git de los otros VCS?</h5>
+        <p>
+          Mientras otros VCS solo almacenan los cambios existentes dentro de los
+          archivos. Adicionalmente Git crea un enlace a los archivos sin cambios
+          en lugar de guardarlos, esto lo hace muy rápido para moverse en el
+          tiempo.
+        </p>
+        <p>
+          Casi cualquier trabajo que hagas en Git es local. Es decir que puedes
+          trabajar de modo offline sin miedo. Esto porque tienes un repositorio
+          en tu computador. Cuando tengas conexión puedes guardar los cambios
+          (Commits en Git).
+        </p>
+        <h5>¿Cómo Git almacena los cambios?</h5>
+        <p>
+          Git tiene integridad SHA(no puedes perder información durante su
+          transmisión o sufrir corrupción de archivos sin que Git lo detecte)
+        </p>
+        <p>
+          Git almacena los cambio en un SHA-1. Esto es un conjunto de 40
+          caracteres hexadecimales que harán una referencia a uno de esos
+          cambios en nuestro proyecto.
+        </p>
+      </div>
+      <div class="container mt-5">
+        <h2>Estados de Git</h2>
+        <ol>
+          <li>
+            <strong>Working Directory: </strong>Archivos nuevos Es donde
+            trabajamos de manera local, pero para guardarlo hay que pasarlo al
+            Staging Area
+          </li>
+          <li>
+            <strong>Staging Area: </strong>Es el área de preparación, se
+            almacenan justo antes de hacer commit
+          </li>
+          <li>
+            <strong>Git repository: </strong> El repositorio donde almacenan los
+            cambios del proyecto de forma segura.
+          </li>
+        </ol>
+      </div>
+      <div class="container mt-5">
+        <h2>¿Qué es GitHub?</h2>
+        <p>
+          GitHub Es una plataforma en la que se almacenan los cambios de un
+          proyecto. Además es una plataforma que funciona como una red social.
+          Aquí, las personas que visiten tu sitio puedan darle estrellitas a los
+          proyectos que hayas desarrollado. (GitHub es la red social de los
+          programadores )
+        </p>
+
+        <p>
+          <strong>GIT:</strong> Software que nos permite realizar control de
+          versiones sobre nuestros proyectos. <br /><br /><strong
+            >GITHUB:</strong
+          >
+          Plataforma que nos permite alojar nuestros repositorios en internet,
+          además de proveer más utilidades
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Comandos útiles de la terminal</h2>
+        <p>
+          <li>
+            Movernos dentro de carpetas. ( cd nombreCarpeta) Con ( cd .. )
+            podemos salir de la carpeta. (Change Directory)
+          </li>
+          <li>Crear una carpeta mkdir nombreCarpeta (Make Directory)</li>
+          <li>Crear archivos touch nombreArchivo</li>
+          <li>Listar los archivos de la carpeta actual ls o dir</li>
+          <li>Ver rut actual pwd:</li>
+          <li>
+            Limpiar la terminal clear. Este nos sirve para hacer scroll e ir al
+            principio de la terminal.
+          </li>
+          <li>Borrar archivos rm nombreArchivo.</li>
+          <li>Borrar carpetas rm -rf y el nombreCarpeta.</li>
+          <li>Vim nombreArchivo Abrir arhivo en el editor en consola</li>
+          <li>
+            Comando para Vim Esc :wq (write quit) Guardar y salir cambios que
+            hechos al archivo
+          </li>
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Flujos de Trabajo con Git</h2>
+        <h4>Configuracion Usuario Global Git</h4>
+        <div class="alert alert-dark">
+          <samp>
+            git config --global user.name "Nombre"// Configurar Nombre<br />
+            git config --global user.email "correo@dominio.com" // Configurar
+            correo<br />
+            git config --global color.ul true //activar colores de git<br />
+            git config --global -- list // Ver Configuraciones<br />
+            git config --list //Listar datos configurado</samp
+          >
+        </div>
+
+        <h4>Inicializando Repositorio "Crear" (git init)</h4>
+        <div class="alert alert-dark">
+          <samp>
+            git init nombreCarpeta // Crea carpeta e inizializa repositorio en
+            la misma<br />
+            git init //inicializando repositorio en la carpeta actual<br />
+            rm -rf .git //borra repositorio local
+          </samp>
+        </div>
+
+        <h4>Agregando, quitando y viendo el estatus de archivos</h4>
+        <p>
+          <strong>Untracked files: </strong> Son archivos que están en nuestro
+          Working Directory, lo que aparezca en rojo es lo que se ha modificado
+          y hay que pasarlo al Staging.
+        </p>
+        <div class="alert alert-dark">
+          <samp>
+            git status // Ver estado archivo (Archivo en rojo esta working
+            directory, verde staging area) <br />
+            git add nombreArchivo // Agg archivo a stagin area<br />
+            git add -A // Agrega todos los archivos que hayan sufrido cambios
+            (creados, modificados, eliminados).<br />
+            git add . // Agrega los archivos creados y modificados, PERO NO los
+            eliminados.<br />
+            git add -u // Agrega los archivos modificados y eliminados, PERO NO
+            los creados.<br />
+            git rm --cached nombreArchivo // Devuelve el archivo a working
+            direcory<br />
+            git reset -q // Devuelve todos los archivos al working<br />
+
+            git rm -f nombreArchivo // Quita del stagin y borra el archivo
+            (-F=force)<br />
+            git add -n nombreArchivo // Indica si el archivo esta dentro del
+            directorio<br />
+          </samp>
+        </div>
+        <p>
+          (git add -n)Permite verificar que lo que añadas al commit sea lo
+          correcto y que no añadan archivos que no deseas, es más una medida de
+          prevención que puedes o no usar
+        </p>
+        <h4>Confirmando Cambios (git commit)</h4>
+
+      </div>
+
+      <!-- End div -->
+    </div>
+
+    <div class="alert alert-dark"><samp> ghgh </samp></div>
+  </body>
+</html>

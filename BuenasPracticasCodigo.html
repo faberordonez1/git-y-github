@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Curso de Buenas Prácticas para Escritura de Código</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="alert alert-dark">
+        <samp>laravel new nombreProyecto</samp>
+      </div>
+      <h1>Curso de Buenas Prácticas para Escritura de Código Platzi</h1>
+      <div class="container">
+        <h2>¿A quién beneficia contar con código bien escrito?</h2>
+        <p>
+          El código bien escrito beneficia a todos los involucrados en el
+          proyecto.
+        </p>
+
+        <p>
+          A tí: Cuando retomemos un proyecto después de un largo tiempo nos
+          beneficiará ya que sabremos cómo está ordenado y cómo está escrito
+          todo.
+        </p>
+        <p>
+          A cualquiera: Cualquier persona que deba modificar el código después
+          de tí.
+        </p>
+        <p>
+          A tu cliente: Aunque nunca lo sabrá, su negocio estará mejor atendido.
+        </p>
+      </div>
+      <div class="container mt-5">
+        <h2>Ejes que hacen a la calidad del código</h2>
+        <h4>Los siguientes elementos dotan de calidad al código:</h4>
+        <p>
+          <strong>Legibilidad:</strong> qué tan fácil es interpretar lo que el
+          código dice. <br />
+          <strong>Mantenibilidad:</strong> cuánto esfuerzo supondrá adaptar el
+          código a nuevos requerimientos. <br />
+          <strong>Testeabilidad:</strong>
+          cuánto esfuerzo supondrá realizar pruebas sobre este código.
+        </p>
+      </div>
+
+      <div class="containermt-5">
+        <h2>Código prolijo</h2>
+
+        <p>
+          El código fuente lo escribimos para personas como tú y yo, para las
+          computadoras tenemos las versiones compiladas.
+          <br />
+          Debemos seguir un estándar de codificación, el cual nos ayuda a:
+        </p>
+
+        <ul>
+          <li>Generar código claro y consistente.</li>
+          <li>Evitar perder tiempo en decisiones triviales.</li>
+        </ul>
+
+        <p>Tips para mejorar la legibilidad de nuestro código:</p>
+        <li>
+          Define un estándar o usa un creado: Piénsalo una vez y déjalo por
+          escrito.
+        </li>
+        <li>
+          Respétalo: Haz un esfuerzo por adherir al estándar durante tu día a
+          día.
+        </li>
+        <li>
+          Apóyate en algún linter: Esta sencilla herramienta te ayudará a
+          incorporar buenas prácticas.
+        </li>
+
+        <h5>Uso correcto al abrir llaves</h5>
+        <div class="alert alert-dark">
+          <samp
+            >if{ <br />
+            condicion<br />
+            }<br />
+          </samp>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <h2>Identificadores mnemotécnicos, específicos y precisos</h2>
+        <p>
+          Los identificadores son variables, funciones, clases, módulos,
+          componentes, etc. Elementos a los que nosotros debamos crearles un
+          nombre propio.
+          <br />
+          Ejemplo sin un identificador mnemotécnico una función se vería así:
+        </p>
+
+        <div class="alert-dark">
+          <samp>
+            function f( int $b, int $a ) : float {<br />
+            &nbsp &nbsp &nbsp return ( $b * $a ) / 2;<br />
+            }<br />
+          </samp>
+        </div>
+
+        <p>
+          Al leer este código no sabemos para qué funciona y hasta podríamos
+          borrarlo por equivocación.
+          <br />
+          Ahora utilizando un identificador mnemotécnico se vería así:
+        </p>
+        <div class="alert-dark">
+          <samp>
+            function areaRectangulo( int $base, int $altura ) : float {<br />
+            &nbsp &nbsp &nbsp return ( $base * $altura ) / 2;<br />
+            }<br />
+          </samp>
+        </div>
+        <p>
+          Ahora gracias a que el código es más legible sabemos para qué funciona
+          esta función.
+          <br />
+          Atención a los identificadores que estableces.
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Codigo Modular</h2>
+        <p>
+          El código modular son pedazos de códigos divididos que pueden ser
+          utilizados en cualquier lugar para evitar tener un solo archivo con un
+          bloque de código gigante. (Crear pequeños trozos de código) es mas
+          facl de leer y mantener
+        </p>
+        <p>
+          Se pueden modular los bloques Repetitivos for,while,do while,
+          foreach,condicionales o expresiones complejas
+        </p>
+        <p>
+          Ésto es la evolución de la
+          <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada"
+            >programación estructurada</a
+          >
+          un paradigma que hablaba de dividir un programa en 3 subrutinas
+          (bloques, condicionales y bucles) Lo que vimos es
+          <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_modular"
+            >la programación modular</a
+          >, que habla de separar un problema grande en problemas más pequeños,
+          fáciles de solucionar.
+        </p>
+      </div>
+
+      <div class="containermt-5">
+        <h2>Codigo reutilizable</h2>
+        <p>
+          Escribir código reutilizable nos va a ayudar a que en lugar de copiar
+          y pegar una misma línea de código pero con diferentes parámetros lo
+          hagamos a través de una función que retorne los valores que
+          necesitamos y luego la podremos llamar en cualquier lugar del código
+          que necesitemos pasándole los parámetros que deseamos.(Evitar repetir
+          codigo y crea una función que capture y retorne un parametro)
+        </p>
+        <h4>tips para hacer un buen código reutilizable</h4>
+        <p>
+          1.Mantén tu código DRY (O SECO, en español). Es decir “Don’t Repeat
+          Yourself” (O “No te repitas”<br />
+          Haz métodos o funciones que hagan solamente una cosa<br />
+          Haz pruebas unitarias para tus métodos y que sean fáciles de testea<br />
+          Trata de pensar de forma abstracta, usa interfaces o clases
+          abstracta<br />
+          Escribe código que se pueda extender fácilmente en un futuro
+          (Básicamente que modificarlo no signifique prenderle fuego a medio
+          código)
+          <br />No escribas código innecesario o que no hace falta en el
+          momento<br />
+          Reduce el acoplamiento (Acoplamiento hace referencia a que, el
+          comportamiento de una función depende enteramente de lo que retorne
+          otra función, y esta de otra, y otra, y otra…)
+          <br />Usa más código modular<br />
+          Escribe tu código como si fuera una API externa (Que se pueda importar
+          de otro código y sirva completamente)
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Código organizado</h2>
+        <p>
+          El código organizado se refiere a cómo tenemos distribuido nuestros
+          archivos en la raíz (root) del proyecto. A mayor organización, mayor
+          entendimiento del código.
+        </p>
+        <h4>Estructura</h4>
+        <p>
+          public // Accesibles fuera server<br />
+          src //Archivos propios del proyecto (clases utilizadas desde public)<br />
+          tests // Archivos pruebas realizadas<br />
+          Vendor Librerias externas<br />
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Evita el hardcoding</h2>
+        <p>
+          El hardcoding es la práctica de escribir valores literales en lugar de
+          identificadores. No debe de usarse, ya que si el día de mañana debemos
+          cambiar los valores eso significa que debemos cambiar el código en los
+          lugares que esté ese valor estático por completo y luego mandar a
+          producción, cuándo podríamos hacer el cambio más orgánico en una
+          variable que afecte a todos los lugares que es llamada. <br /><br>No definir valores literales (quemar el numero), si no asignarlo
+          variables ya que los valores pueden cambiar)
+        </p>
+      </div>
+      <div class="container mt-5">
+        <h2>Evitar efectos colaterales</h2>
+        <p>
+          Debemos analizar muy bien nuestro código para evitar efectos
+          colaterales y evitar que nuestro código deje de funcionar. Un consejo
+          de nuestro profesor en esta clase: No uses variables globales.
+        </p>
+        <p>algo que sucede algo más allá del código del código que se esta leyendo<br><br>
+          Ejemplo Definicion de variable globalcon un valor puntual y luego con
+          un iterador cambiar el valor
+        </p>
+        <p>
+          
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Principios SOLID: Single Responsibility Principle</h2>
+
+        <p>
+          <strong>SOLID</strong> son cinco principios básicos de la programación
+          orientada a objetos que ayudan a crear software mantenible en el
+          tiempo.
+        </p>
+        <p>
+          S: Single Reponsibility Principle o la alta cohesión) <br />
+          O: Open/Closed Principle<br />
+          L: Liskov Substitution Principle<br />
+          I: Interface Segregation Principle<br />
+          D: Dependency Inversion Principle<br />
+        </p>
+
+        <h4>S Principio de responsabilidad única (Single Reponsibility)</h4>
+        <p>
+          Nos dice que una clase debería tener un único objetivo, muy claro, muy
+          conciso y muy acotado (Una clase debería tener sólo una razón para
+          cambiar)<br />
+          Cada responsabilidad es el eje del cambio<br />
+          Para contener la propagación del cambio, debemos separar las
+          responsabilidades.<br />
+          Si una clase asume más de una responsabilidad, será más sensible al
+          cambio.<br />
+          Si una clase asume más de una responsabilidad, las responsabilidades
+          se acoplan.
+        </p>
+
+        <p>
+          La idea es evitar que una sola clase haga muchas cosas en lo que
+          podría compararse con un “hombre orquesta”.
+        </p>
+
+        <h4>
+          O Principio abierto o cerrado (Open/Closed Principle) :C (relacionado
+          polimorfismo)
+        </h4>
+        <p>
+          Open/Closed Principle nos propone una forma de estructurar nuestras
+          clases para que estas se adapten a nuevos requerimientos sin la
+          necesidad de modificar su estructura interna, es decir que una entidad
+          de software (Clase) debe quedarse abierta para su extensión, pero
+          cerrada para su modificación.
+        </p>
+        <h4>L Liskov Substitution Principle :c</h4>
+        <p>
+          El Liskov Substitution Principle establece que cada clase que hereda
+          de otra puede usarse como su padre sin necesidad de conocer las
+          diferencias entre ellas. Para que pueda darse este principio debe
+          cumplir con dos puntos:
+        </p>
+        <p>
+          El cliente debe usar métodos de la clase padre únicamente.<br />
+          La clase hija no debe alterar el comportamiento de los métodos de la
+          clase padre. extender, es decir, dejar lo que ya trae y adicionar algo
+          diferente que no afecte lo que viene desde la clase padre.
+        </p>
+        <p>
+          Si la clase hija modifia el metodo del padre debemos preguntarnos si
+          la relación entre las dos clases es de herencia o si es otro tipo de
+          relación.
+        </p>
+
+        <h4>I Interface Segregation Principle</h4>
+        <p>
+          El Interface Segregation Principle establece que los clientes de un
+          programa sólo deberían conocer de éste los métodos que realmente usan.
+        </p>
+        <p>
+          “Si una clase implementa una interfaz, y la interfaz le obliga definir
+          un método que no necesita, entonces probablemente tu clase no está
+          implementando la interfaz correcta”
+          <br />
+          Y una solución a ello puede ser:<br />
+          <br />
+          Divide esa interfaz en interfaces más específicas, y en tus clases
+          solo implementa las interfaces que necesites.
+        </p>
+        <h4>D Dependency Inversion Principle</h4>
+        <p>
+          Dependency Inversion Principle detalla que los módulos de alto nivel
+          no deben depender de los de bajo nivel, ambos deben depender de
+          abstracciones.<br />
+
+          Las abstracciones no deben depender de los detalles, los detalles
+          deben depender de las abstracciones (El constructor no debe crear los
+          valores, los debe recibir por parametros)
+        </p>
+      </div>
+      <div class="containermt-5">
+        <h2>Patrones de diseño</h2>
+        <p>
+          Los patrones de diseño son soluciones de arquitectura de software
+          aplicables a diferentes problemas.
+        </p>
+
+        <p />
+        <p>
+          Estos son soluciones conceptuales que se pueden aplicar a la hora de
+          cómo diseñar tus clases. Y existen 3 tipos de patrones:<br />
+          <br />
+          Creación → Se encargan de cómo crear nuevas instancias de nuestro
+          objetos.<br />
+          Estructurales → Nos dicen cómo debemos estructurar nuestras clases.<br />
+          Comportamiento → Nos dicen cómo deben comportase nuestros objetos.
+        </p>
+        <p>
+          Esto no se trata de código, sino de ayudas de cómo pensar nuestra
+          aplicaciones. También recuerda que estos patrones no son aplicables
+          siempre. Son ideas que nos pueden ayudar a pensar.
+        </p>
+
+        <h4>Singleton(creacion,comportamiento "optimiza recursos")</h4>
+        <p>
+          El patrón Singleton permite restringir la creación de objetos
+          pertenecientes a una clase o al valor de un tipo a un único objeto.
+          (Garantiza que solo exista una instancia de la clase)
+        </p>
+        <p>
+          Ejem<br />
+          Conector DB<br />
+          Logger (también puede ser un Multiton si hay muchos archivos de
+          registro para varios propósitos)
+          <br />Bloquear archivo para la aplicación (solo hay uno en el sistema
+          de archivos ...)
+        </p>
+        <h4>Factory</h4>
+        <p>
+          El patron Factory es creacional, se utiliza para ayudar a la creación
+          de nuevas instancias de objetos
+        </p>
+        <p>
+          Se trata de un patrón creacional, o sea, que nos ayuda a crear nuevas
+          instancias de objetos.
+          <br />
+          El patrón factory consiste en utilizar una clase constructora
+          abstracta con unos cuantos métodos definidos y otro(s) abstracto(s).
+        </p>
+
+        <h4>Command (Comportamiento)</h4>
+        <p>
+          El patrón Command permite solicitar una operación a un objeto sin
+          conocer realmente el contenido de esta operación, ni el receptor real
+          de la misma. Para ello se encapsula la petición como un objeto, con lo
+          que además facilita la parametrización de los métodos.
+        </p>
+        <p>
+          Prácticamente se refiere a unificar las tareas en una sola clase, que
+          será la encargada de uinificar esos puntos de entrada ejecutar todos
+          los procesos necesarios.
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Introducción al Testing Automatizado</h2>
+        <p>
+          Existen dos tipos de testing: <br /><br />
+          <strong>Unit Testing:</strong> Evaluamos el funcionamiento de los componentes
+          individualmente.<br />
+          son pequeños test creados específicamente para cubrir todos los
+          requisitos del código y verificar sus resultados.<br /><br />
+<strong>
+Integration Testing:</strong> Validar la interacción entre los componentes y el
+          sistema completo.
+        </p>
+
+        <h2>TDD Test Driven Development</h2>
+        <p>
+          https://www.youtube.com/watch?v=EBtu4WyWHPc<br />el Test Driven
+          Development nos ayudará a reducir al mínimo los errores de nuestra
+          aplicación aplicando primero las pruebas y luego el código de la
+          aplicación.<br />TDD o Test Driven Development es una metodología
+          donde hacemos todo al revés. Por un momento vamos a dejar de programar
+          para dedicarnos a escribir las pruebas.
+        </p>
+        <p>https://github.com/mchojrin/platzi-tdd</p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Pull Request</h2>
+        <p>
+          Los pull request son pedidos de mejora a archivos de un proyecto
+          generalmente open source. Sirve para que la comunidad ayude a mejorar
+          el código que ha sido escrito por ti, tu equipo o una empresa; luego
+          de que realizamos un cambio generamos un pull request para ofrecer un
+          cambio a mejora y solo queda esperar a que el dueño del repositorio lo
+          pruebe y lo agregue a el código principal.
+        </p>
+        <p>
+          Esto se hace creando un fork o rama (copia del repositorio, realiza la
+          mejora y al terminar la mejora envia el pull request)
+        </p>
+      </div>
+
+      <div class="container mt-5">
+        <h2>Documentacion</h2>
+        <p>
+          Documentar es una de las mejores prácticas que podemos hacer cuando
+          estamos en un equipo de trabajo. Dejar por escrito cómo hemos hecho
+          algunas funcionalidades, cómo podría ser mejorado el código y por
+          sobretodo debemos dejar comentarios en el código que ayuden a las
+          personas a ubicarse en qué parte de la aplicación están y qué hacen
+          esas líneas de código.
+        </p>
+        <p>
+          La documentación debe hacerse clara y entendible pensando en quien la
+          va a leer a futuro.
+        </p>
+        <h4>¿Qué documentar?</h4>
+        <p>
+          Lo mínimo que necesita las personas que quieren colaborar o heredar tu
+          proyecto<br />
+          <br />Como implementar nueva funcionalidad.<br />
+          Como se realizan las pruebas.<br />
+          Como se lleva el codigo a produccion. etc.
+        </p>
+        <h4>Como documentar</h4>
+        <p>
+          Recomendado UML como documentación (Graficos).no necesariamente debe
+          ser texto
+        </p>
+        <h4>¿Dónde documentar?</h4>
+        <p>
+          Propio código.<br />
+          Sistema de documentación.<br />
+          Wiki (github https://www.youtube.com/watch?v=RhydZnn7Zqc)<br />
+          Ficheros externos.<br />
+          README (https://pandao.github.io/editor.md/en.html)
+        </p>
+        <p>
+          <strong>Puedes documentar tu código en VS Code poniendo:</strong
+          ><br />
+          /**<br />
+          TITULO DE LA FUNCION<br />
+          @param PARAMETRO1 FUNCION<br />
+          @param PARAMETRO2 FUNCION<br />
+          @param PARAMETRO3 FUNCION<br />
+          **/
+        </p>
+        <h4>¿Cuándo documentar?</h4>
+        <p>
+          Documentar inmediatamente después de codear.<br />
+          Cuando se resuelve un problema, documentar la solución.
+        </p>
+      </div>
+      <div class="container mt-5">
+        <h2>A quién beneficia el código bien escrito</h2>
+        <p>
+          La primera persona a quien beneficiará es a nosotros mismos,
+          lograremos entender nuestro código no importa el tiempo que pase.
+          <br /><br />
+          Nuestros compañeros lograrán entender muchísimo más nuestro código
+          luego de todas las buenas prácticas que hemos realizado.<br /><br />
+          Y finalmente a nuestro cliente que aunque no pueda ver al detalle
+          nuestro código, estará mejor organizado y podrá ser leído,mantenido
+          por cualquier persona.
+        </p>
+        <h4>El código bien escrito debe cumplir con</h4>
+        <ul>
+          <li>Legibilidad (entendible al primer vistaso),</li>
+          <li>
+            Mantenibilidad (Pueda evolucionar sin ningún problema o agregar
+            nuevas funcionalidades)
+          </li>
+          <li>Testeabilidad (que se puedan realizar pruebas automatizadas).</li>
+        </ul>
+        <h4>Temas a Tener en cuenta</h4>
+        <ul>
+          <li>La forma de escribir codigo</li>
+          <li>Los nombres utilizados</li>
+          <li>El diseño de las clases</li>
+          <li>No solo se trata de codigo la documentacion es importante</li>
+        </ul>
+        <p>
+          Los Framework aplican todas buenas practicas y te permiten
+          concentrarte en los problemas puntuales de tu APP
+        </p>
+      </div>
+      <div class="containermt-5">
+        <h2>Aplicar lo aprendido: Libro de visitas</h2>
+        <p>
+          Para los que quieran echarle un ojo (en los enlaces faltó el link de
+          github):
+          <br />
+          git clone https://github.com/mchojrin/GuestBook.git
+        </p>
+      </div>
+      <div class="containermt-5">
+        <h2>Conclusiones</h2>
+        <p>
+          Hemos aprendido la importancia que tiene el escribir código limpio,
+          las mejores prácticas y metodología para hacerlo, hemos usado códigos
+          de ejemplo para optimizarlos y obtuvimos los conocimientos necesarios
+          para la escritura de código.
+        </p>
+        <ul>
+          <li>Mantener codigo bien organizado</li>
+          <li>Prestar atencion a la forma de escribir codigo</li>
+          <li>Prestar atencion a la nomenclatura utilizada</li>
+          <li>Estructurar clases pensando en el futuro</li>
+          <li>Apoyarse en pruebas automatizadas</li>
+          <li>Ser un programador de bien</li>
+        </ul>
+      </div>
+      <!-- Main  bottom-->
+    </div>
+  </body>
+</html>
