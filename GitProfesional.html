@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <h1>Curso Profesional de Git</h1>
-            <div class="container mt-5">
+      <div class="container mt-5">
         <h2>¿Qué es un Sistema Control de Versiones?</h2>
         <a
           href="https://static.platzi.com/media/public/uploads/GIT%20intro_9be7cd0c-f674-4a0f-8bd4-0eac7775da60.pdf"
@@ -54,7 +54,7 @@
       </div>
       <div class="container mt-5">
         <h2>Git</h2>
-        <img src="Git-Logo.png" width="180">
+        <img src="Git-Logo.png" width="180" />
         <p>
           ¿Cómo nace Git? El sistema open source de **Linux necesitaba estar en
           un sistema de control de versiones, entonces Linus Torvalds lo creo
@@ -177,6 +177,8 @@
           >
         </div>
 
+
+
         <h4>Inicializando Repositorio "Crear" (git init)</h4>
         <div class="alert alert-dark">
           <samp>
@@ -219,16 +221,159 @@
           correcto y que no añadan archivos que no deseas, es más una medida de
           prevención que puedes o no usar
         </p>
-        <h4>Confirmando Cambios (git commit)</h4>
 
-        <div class="alert alert-dark"><samp> git commit -m "mensaje commit" // confirma cambios agregados<br>
-        git commit --amend  (-m "mensaje sin desea renombrar el commit anterior")//concatena nuevo archivo o cambios al commit anterior
-    luego se abre vim y debemos seleccionar el nombre del commit<br>  
-    git log //lista los commit
-      </samp></div>
-      </div>
 
-      <!-- End div -->
+        <h4>Confirmando Cambios (git commit - amend)</h4>
+        <div class="alert alert-dark">
+          <samp>
+            git commit -m "mensaje commit" // confirma cambios agregados<br />
+            git commit -am "mensaje Commit" // Agrega todos los archivos al
+            stagin y a la vez crea el commit, no es recomendable porque usa
+            muchos archivos<br />
+            git commit --amend (-m "mensaje sin desea renombrar el commit
+            anterior")//concatena nuevo archivo o cambios al commit anterior; si
+            no agrega mensaje para renombrar, se abre vim y debemos seleccionar
+            el nombre del commit. Antes de ejecutar ammend se debe agg el
+            archivo al stagin<br />
+            git log //lista los commit
+          </samp>
+        </div>
+
+
+        <h4>Etiquetando confirmaciones commits (git tag)</h4>
+        <p>
+          Existen 2 tipos: <br />
+          <strong>Ligeras</strong> Se crean con el nombre de la etiqueta Ejem:
+          1.0 <br />
+          <strong>Anotadas </strong> Son las que llevan la etiqueta y además un
+          mensaje lo ayudamos usando -m "mensaje"
+        </p>
+        <p>#Sha: número del commit de 40 caracteres</p>
+        <div class="alert alert-dark">
+          <samp>
+            git tag numTag // Añade etiqueta Ligera al ultimo commit (numTag=1.0) <br />
+            git tag -a numTag -m 'mensajeTag'// Añade etiqueta anotada al ultimo commit<br />
+          git tag -l // lista las etiquetas<br>
+          git tag // tambien lista las etiquetas<br>
+          git tag numTag #Sha // añade etiquetas al commit relacionado con #Sha<br>
+        git tag -d numTag // borra etiqueta <br>
+        git tag -f -a numTag -m 'Mensaje version' #Sha //renombra etiqueta, despues es necesario borrar la anterior
+        
+        </samp>
+        </div>
+      <h4>Historia del proyecto (git log)</h4>
+      <p>Para ver la historia de nuestro proyecto este se invoca con git log, los logs te muestran los códigos hexadecimales que crea Sha-1, el autor y la fecha en la que se envió el ese commit.
+        Git log se puede personalizar, y de hecho es un comando que se puede personalizar mucho. Para esto podemos usar -online que nos ayuda a resumir mucho esos commits.
+        Además, podemos ponerle múltiples parámetros, así como consultar solo los logs que nos interesan ver.
+        La documentación de git log es súper extensa, y puedes usarla para revisar la historia de nuestro proyecto.</p>
+      <div class="alert alert-dark"><samp> 
+        git log  // lista commit de forma estandar<br>
+        git log --oneline //lista commit de forma reducida<br>
+      git log --oneline --grph // Lista commit reducidos y grafico de los cambios<br>
+    git log -2 // Lista los ultimos 2 commit (* el # puede cambiar) <br>
+    git log>commit.txt // crear txt con toda la lista de commits
+    </samp></div>
+
+
+    <h5>Logs, para mostrar mejor nuestros commits</h5>
+    <P><strong>git lg : </strong>Se usa para obtener información concisa de mis commits muestra la hora el autor el gráfico el nombre y el commit id. es muy completo y la version del superlog que utilizo.</P>
+    
+    <div class="alert alert-dark"><samp> git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"</samp></div>
+    
+    <p>resultado: </p>
+
+    <div class="alert alert-dark"><samp> 
+       * ||| 6c4b26c - 5 Finale (2 hours ago) <omar crespo="" -="" jackcres=""><br>
+       ||_|/<br>
+       |/||<br>
+       * || 3670cc3 - 4 (4 hours ago) <omar crespo="" -="" jackcres=""><br>
+       ||/<br>
+       |/|<br>
+       * | 789f887 - 3 (4 hours ago) <omar crespo="" -="" jackcres=""><br>
+       * |   df26171 - Merge branch 'Responsive' (4 hours ago) <omar crespo="" -="" jackcres=""><br>
+       |\ \<br>
+       ||/<br>
+       | * 30600c8 - a (4 hours ago) <omar crespo="" -="" jackcres=""><br>
+       * | 0bc0a42 - 2 (4 hours ago) <omar crespo="" -="" jackcres=""><br>
+       |/<br>
+       * 857e367 - 1 (4 hours ago) <omar crespo="" -="" jackcres=""><br>
+       * c0bd1a9 - Inicio Del Proyecto (4 hours ago) <omar crespo="" -="" jackcres="">     <br> 
+    </samp></div>
+
+<p>
+  <strong>git Rlog</strong>  RamasLog como le quería poner… Muestra sola la info necesaria para que nos concentremos en el gráfico y podamos analizarlo. Muestra el nombre el commit id y el grafico, poco mas pero ayuda mucho a la hora de analizar el gráfico ya que nos quita lo que no necesitamos para ello
+</p>
+
+<div class="alert alert-dark"><samp> git config --global alias.Rlog"log--oneline--graph--all"</samp></div>
+
+<div class="alert alert-dark"><samp> 
+   * ||| 6c4b26c 5 Finale<br>
+  ||_|/<br>
+  |/||<br>
+  * || 3670cc3 4<br>
+  ||/<br>
+  |/|<br>
+  * | 789f887 3<br>
+  * |   df26171 Merge branch 'Responsive'<br>
+  |\ \<br>
+  ||/<br>
+  | * 30600c8 a<br>
+  * | 0bc0a42 2<br>
+  |/<br>
+  * 857e367 1<br>
+  * c0bd1a9 Inicio Del Proyecto
+</samp></div>
+
+<h4>Revisando Cambios entre versiones (git diff)</h4>
+
+<p>Si queremos saber cuáles son los cambios que hemos tenido entre un commit y otro, solo debemos hacer una comparación entre un commit y otro usando Sha-1.</p>
+
+<div class="alert alert-dark"><samp>
+  git diff #Sha //Muestra  cambios entre estado actual y el commit del Sha<br>
+  git diff #Sha #sha1 // Muestra  cambios entre los 2 commit de los Sha asignados (analizar orden de los Sha)<br>
+  git diff numTag numTag // Muestra  cambios entre 2 etiquetas
+</samp></div>
+
+
+<h4>Borrar Comit (git reset)</h4>
+
+<p>Alguna vez tuviste un error y quisiste borrar el commit que habías enviado. Para esto podemos hacer a través de git reset.</p>
+
+<h5>git reset --soft</h5>
+<p>
+  Si quieres usar este comando debes tener mucho cuidado, porque puedes borrar muchos commits.<br>
+El comando reset --soft nos permite identificar el commit que queremos resetear.
+</p>
+<div class="alert alert-dark"><samp> git reset --soft #ShaCommit  //borra commit y los archivos quedan en el working directory (*Borrar desde un commit anterior al que desea borrar)<br>
+</samp></div>
+
+<h5>git reset --mixed</h5>
+<p>
+  Lo podemos usar para hacer cambios a los commits en los que pudimos tener algunos errores.
+</p>
+
+<div class="alert alert-dark"><samp> 
+  git reset --mixed #ShaCommit // Borra el commit y deja los archivos en el working directory(estado 1)
+</samp></div>
+
+<h5>git reset --hard</h5>
+
+<p>vamos a hacer resets que serán definitivos, antes de usar este comando es recomendable craer el archivo txt con los codigo Sha de los commit, es la unica forma de deshacer los camios con este comando</p>
+
+<div class="alert alert-dark"><samp>
+  git log>commit.txt // crear txt con toda la lista de commits <br>
+  git reset --hard #ShaCommit // Borra commits y archivos del staging area y git repository (Conserva unicamente archivos nuevos (untracked files ) del working directory)<br>
+  git reset --hard #ShaCommit // Regresa al #ShaCommit relacionado incluso despues de borrado, para ello es necesario tener copia de los Sha
+</samp></div>
+
+
+<h4>Configurar otro editor de texto diferente a VIM</h4>
+
+<div class="alert alert-dark"><samp>git config --global core.editor "atom --wait" // Cambio a atom</samp></div>
+
+</div>
+
+<!-- End div -->
     </div>
 
     <div class="alert alert-dark"><samp> ghgh </samp></div>
