@@ -366,7 +366,9 @@ git config --global core.editor "subl --wait"// Cambio a editor Sublime<br>
 
 <div class="container mt-5">
    <h2>Multiples entornos de trabajo</h2>
-   <h4>Ramas ↑ Multiples Variantes del repo(git branch)</h4>
+
+
+   <h4>Crear Ramas ↑ Multiples Variantes del repo(git branch)</h4>
    <p>Master es la rama principal y la que se crea por defecto en git, sin embargo, podemos crear ramas adicionales para tener una version en pararalelo del proyecto ya sea para arreglar un Bug/fix o para crear un feature.
       Lo ideal es siempre trabajar en una rama diferente a master para que en caso de un fallo no afectar a master que es la principal</p>
    <div class="alert alert-dark"><samp> 
@@ -375,6 +377,26 @@ git config --global core.editor "subl --wait"// Cambio a editor Sublime<br>
      git branch -d nombreRama// borrar ramas, No funciona si la rama tiene commits<br>
      git branch -D nobreRama// Forzar borrado ramas sin importar commits<br>
      git branch -m nombreRamaOld nombreRamaNew // renombrar ramas, No es buena practica renombrar master
+  </samp></div>
+
+   <h4>Moviendonos entre ramas (git checkout)</h4>
+
+   <div class="alert alert-dark"><samp>
+     git checkout nomreRama // Cambiarse de rama<br>
+     git checkout #ShaCommit // (No funciono )Ir a commit especifico sin borrar nada y de ahi puede crear una nueva rama<br>
+     git checkout numTag // Moverse a una etiqueta
+     git checkout -b nombreRama // Crea rama y se mueve a la misma
+  </samp></div>
+
+  <h4>Trabajando entre ramas</h4>
+  <p>Si no se realiza el commit de los archivos 
+    nuevos o modificados (los que estan en el woking directory,), estos se mueven a cualquier 
+    rama a la que cambiemos y unicamnete se guardaran cuando realizemos el commit
+  </p>
+  <a href="https://www.gitkraken.com/">Interfaz grafica git</a>
+  <div class="alert alert-dark"><samp> 
+
+
   </samp></div>
 
 </div>
