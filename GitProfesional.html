@@ -395,11 +395,32 @@ git config --global core.editor "subl --wait"// Cambio a editor Sublime<br>
     rama a la que cambiemos y unicamnete se guardaran cuando realizemos el commit
   </p>
   <a href="https://www.gitkraken.com/">Gitkraken Interfaz grafica git</a>
-  <div class="alert alert-dark"><samp> 
+  
+  <h4>Mezclando ramas y resolviendo conflictos (git merge)</h4>
+  <p>Existen 3 tipos: </p>
+  <p><strong>Fast-fordward: </strong> cuando la rama es la continuacion directa de la rama donde salio en este caso master, cuando se trabaja en equipo es la primera y la mas facil de mezclar</p>
+  <p><strong>Recursiva: </strong>Antes de esta se habia mezclado una del tipo anterior, por ende tenemos cambios en los archivos, es decir master no es igual a cuando se creo la rama que estoy mezclando</p>
+  <p><strong>Automezclado con conflictos: </strong> Se abre el editor, debo editar confirmar los cambios y guardar (Entre Head y == es el contenido de master)
+  .A continuacion se debe realizar el commit y listo rama fusionada<br>*
+Algunas veces se abre el editor para confirmar el nombre del commit de fusion, basta revisar el nombre y  guardar </p>
 
+  <ol>
+  <li>Pararse en la rama principal (master)</li>
+  <li>Realizar la fusion de las ramas</li>
+  <div class="alert alert-dark"><samp> git merge nombreRama // Mezcla rama</samp></div>
+</ol>
 
-  </samp></div>
+  <h4>Reescribe la historia de tu proyecto (git rebase)</h4>
+  <p>Hace prácticamente lo mismo que merge, pero en este caso cambiamos
+     la historia de nuestro proyecto sin crear bifurcaciones (ramas). Es mejor usar 
+    merge Usar solo git rebase de manera local.
+    
+    -i: de manera interactiva, nos abrira el editor que tengamos definido en la configuración de git.</p>
 
+    <p>Rebase es mover los commits de una rama secundaria hacia adelante de la rama principal, en vez de fusionarlas y con esto se conserva una unica linea de tiempo sin bifurcaciones.
+<br><br>
+      rebase: reorganización<br>
+      merge: fusionar</p>
 </div>
 
 
