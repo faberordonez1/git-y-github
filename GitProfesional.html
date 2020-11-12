@@ -411,22 +411,37 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
 </ol>
 
   <h4>Reescribe la historia de tu proyecto (git rebase)</h4>
-  <p>Hace prácticamente lo mismo que merge, pero en este caso cambiamos
-     la historia de nuestro proyecto sin crear bifurcaciones (ramas). Es mejor usar 
-    merge Usar solo git rebase de manera local.
-    
-    -i: de manera interactiva, nos abrira el editor que tengamos definido en la configuración de git.</p>
 
-    <p>Rebase es mover los commits de una rama secundaria hacia adelante de la rama principal, en vez de fusionarlas y con esto se conserva una unica linea de tiempo sin bifurcaciones.
+  <p>Rebase es fusionar cambios de una rama secundaria a las principal sin dejar registro de las bifuraciones (rama creadas) , esto con el fin
+    de conservar una unica linea de tiempo
+    
+    
+    (Es basicamente mover los commits de una rama secundaria hacia adelante de la rama principal y borrar registros de ramas)
 <br><br>
-      rebase: reorganización<br>
-      merge: fusionar</p>
+    rebase: reorganización VS   merge: fusionar<br>
+  <p> Lo mas recomendable es usar solo merge, Unicamnete usar git rebase de manera local antes de fusionar con el repostorio publico, cuando no deseas compartir las ramas creadas en local
+</p>
+<img src="Git Rebase.jpg" height="250" alt="">
+
+  <h6>Existen 2 tipos:</h6>
+  <ul>
+    <li><strong>Manual: </strong>tomará automáticamente las confirmaciones de tu rama de trabajo actual y las aplicará al encabezado de la rama anterior 
+      <div class="alert alert-dark"><samp> git rebase nombreRama</samp></div>
+    </li>
+    
+    <li><strong>Interactivo: </strong>Acepta un argumento, nos abre el editor que tengamos definido en la configuración de git para definir la accion a aplicar al comit (elegir,reescribir,editar,fusionar,borrar , etc)
+      <div class="alert alert-dark"><samp> git rebase -i nombreRama</samp></div>
+    </li>
+  </ul>
+ <p><strong>Nota:</strong>  El merge siempre se hace después de un rebase a master, ya que si solo usas merge en proyectos grandes no te servirá y solo terminaras rompiéndolo todo. La buena practica es rebase desde tu rama con los nuevos cambios hacia master, te pasas a master, haces merge con la rama que tiene los nuevos cambios y ya fue rebaseada y actualizas master en el repositorio de git.
+
+  <br>pd: siempre recordar hacer fetch antes de cada rebase, saludos</p>
 </div>
 
 
 <div class="container mt-5">
-  <img src="GitHub-Logo.png" width="100" alt="">
   <img src="GitHub-Mark.png" width="100" alt="">
+  <img src="GitHub-Logo.png" width="100" alt="">
 
 </div>
 <!-- End div -->
