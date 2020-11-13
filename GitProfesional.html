@@ -411,7 +411,7 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
 </ol>
 
   <h4>Reescribe la historia de tu proyecto (git rebase)</h4>
-
+<a href="https://www.atlassian.com/es/git/tutorials/rewriting-history/git-rebase">Ver mas sobre rebase</a>
   <p>Rebase es fusionar cambios de una rama secundaria a las principal sin dejar registro de las bifuraciones (rama creadas) , esto con el fin
     de conservar una unica linea de tiempo
     
@@ -420,6 +420,8 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
 <br><br>
     rebase: reorganización VS   merge: fusionar<br>
   <p> Lo mas recomendable es usar solo merge, Unicamnete usar git rebase de manera local antes de fusionar con el repostorio publico, cuando no deseas compartir las ramas creadas en local
+</p>
+<p><strong>Nota: </strong> Solo utilizarlo en local, nunca en un remoto porque esto afectaria la historia de todos los repos , un a buena practica seria usar rebase en nuestra rama master  local antes de enviarla al repo remoto , esto con el fin de evitar enviar las bifurcaciones (ramas) del proyecto   
 </p>
 <img src="Git Rebase.jpg" height="250" alt="">
 
@@ -434,8 +436,26 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
     </li>
   </ul>
  <p><strong>Nota:</strong>  El merge siempre se hace después de un rebase a master, ya que si solo usas merge en proyectos grandes no te servirá y solo terminaras rompiéndolo todo. La buena practica es rebase desde tu rama con los nuevos cambios hacia master, te pasas a master, haces merge con la rama que tiene los nuevos cambios y ya fue rebaseada y actualizas master en el repositorio de git.
-
   <br>pd: siempre recordar hacer fetch antes de cada rebase, saludos</p>
+
+
+<h4>Guardando cambios temporalmente (git stash)</h4>
+<p>Es un estado que tenemos como intermedio antes de guardar el commit, 
+  te permite guardar cambios temporalmente y lo podemos usar en caso que tengamos
+  que movernos a otra rama y no queremos o aun no estamos seguros de guardar los cambios en un commit
+  <br>*Similar a Commit<br><br>
+  <strong>Nota: </strong> Los sarchivos deben estar trakeados para que funcion con stash, 
+  es decir ya deben haber sido agregados al staging area
+ </p>
+
+ <div class="alert alert-dark"><samp> 
+    git stash // Guarda estado stash temporalmente<br>
+    git stash list // Lista los stash<br>
+    git stash drop stash@{numeroStash}  //Borra stash<br>
+    git stash apply // aplica cambios, toma el ultimo cambio es decir es stash con valor 0<br>
+    git stash apply stash@{numeroStash} //aplica cambios a unstage puntual
+ </samp></div>
+
 </div>
 
 
