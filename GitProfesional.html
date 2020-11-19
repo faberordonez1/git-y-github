@@ -456,6 +456,19 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
     git stash apply stash@{numeroStash} //aplica cambios a unstage puntual
  </samp></div>
 
+
+ <h4>Eligiendo Commits Selectivamente (Cherry pick)</h4>
+ <P>Si estás trabajando en una rama, pero de repente notas que hiciste un cambio en 
+   la rama que no debías, para esto podemos usar cherry pick. Este comando nos puede 
+   salvar la vida, ya que nos permite sacar cambios específicos de una rama y mezclarlos 
+   en otra.Para esto es necesario copiar el Sha del commit que desea copiar "mover" y dirigirse 
+   a la rama donde se desea mover y aplicar el siguiente comando
+  </P>
+
+<div class="alert alert-dark"><samp> 
+    git cherry-pick #ShaCommit //Agrega, pega o mueve commit a otra rama
+    <br>git checkout -- nombreArchvio.html // Quita ultimos cambios del archivo <br>
+  </samp></div>
 </div>
 
 
