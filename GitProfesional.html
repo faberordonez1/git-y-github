@@ -514,6 +514,34 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
 
       <h3>Anadiendo Repositorio remoto a Local (git remote)</h3>
 
+      <div class="alert alert-dark"><samp>git remote add origin direccionRepo // vincula repositorio remoto en el local
+            <br>***Origin es nombre de repo remoto en local y puede cambiar pero es el estandar<br>
+            git remote -v //ver conexion remota<br>
+            git remote remove origin //borra repositorio remoto<br>
+            git remote set-url origin direccionRepo //modifica la conexión con el repo remoto
+Con esto cambia la URL del remote llamado “origin” ya que podemos tener varios remotes.
+
+      </samp></div>
+      <p><strong>Como buenas prácticas, se recomienda lo siguiente:</strong>
+     1.El nombre del repositorio creado en Github (u otra plataforma) debe ser el mismo que el nombre de la carpeta del proyecto.<br>
+        2.Primero crear el repositorio remoto en Github, luego clonarlo al repositorio local en tu máquina y de ahí empezar a trabajar<br></p>
+
+
+    <h3>Traer cambios de Repositorios remoto (git pull/fetch)</h3>
+    <h4>1. fetch</h4>
+    <p>Decarga cambios del repositorio remoto</p>
+    <li>origin: Nombre del repo remoto en Local</li>
+    <li>master: Rama traer de repositorio</li>
+    <div class="alert alert-dark"><samp>git fetch origin master // traer cambios del repo remoto </samp></div>
+    <p>Se crea una nueva rama y acontinuacion se deben mezclar (merge)</p>
+    <div class="alert alert-dark"><samp>git merge origin/master //mezclar rama descargada<br>
+      git merge origin/master --allow-unrelated-histories //en caso de que el anterior muestre erro
+    </samp></div>
+    <h4>2.Pull</h4>
+    <p>Decarga los cambios y los mezcla a la vez</p>
+    <div class="alert alert-dark"><samp>git pull origin master // traer cambios del repo remoto y mezclar  </samp></div>
+
+
 
 </div>
 <!-- End div -->
