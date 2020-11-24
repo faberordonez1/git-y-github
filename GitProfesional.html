@@ -473,8 +473,47 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
 
 
 <div class="container mt-5">
+  <h2>Git Hub</h2>
   <img src="GitHub-Mark.png" width="100" alt="">
   <img src="GitHub-Logo.png" width="100" alt="">
+
+  <h3>Clonando repositorios remotos(git clone/fork) </h3>
+
+  <P>Existen 2 protocolos <strong> HTTP</strong> o <strong>SSH</strong></P>
+  <P>Para clonarlo debemos copiar la direccion del repositorio</P>
+  <div class="alert alert-dark"><samp>
+    git clone direccionRepo //clona repositorio de GitHub a Local 
+  </samp></div>
+  <h4>Fork (Copia a proyectos ajenos)</h4>
+  <P>En este caso debemos ir al repositorio y hacerle fork. De esta forma
+    se nos creara una copia del repositorio en nuestra cuenta GitHub</P>
+
+    <h3>Añadiendo llaves SSH a GitHub</h3>
+    <P>Se generan desde la consola</P>
+    <div class="alert alert-dark"><samp>ssh-keygen -t rsa -b 4096 -C "correo@gmail.com"</samp></div>´
+   
+    <p>Copiamos la llave SSH con el siguiente comando</p>
+    <div class="alert alert-dark"><samp>
+      $ cat ~/.ssh/id_rsa.pub<br><br>
+      /**Linux**/<br>
+      sudo apt-get install xclip #asumiendo que sea ubuntu<br>
+      xclip -sel clip < ~/.ssh/id_rsa.pub<br>
+      
+    </samp></div>
+    <p><strong>Opcion 2</strong><br>
+
+      En Windows, al instalar GIT, te descarga GIT GUI.
+      Abrir GIT GUI, en el menú HELP, seleccionas la opción show KEYS y allí ves la KEY PUBLICA
+      de GIT en tu pc si no la puedes generar con el boton GENERATE KEY.
+      <br><br>
+      La copias y la compartes en** GITHUB** y eso es todo.</p>
+      <p><strong>Nota: </strong> ¿Por que cuando genero la llave ssh me pide un passphrase? es la contraseña de la cuenta en github o ¿para que es?
+        Es una contraseña para acceder a esa llave desde tu propia compu, si le das enter - enter queda sin esa contraseña.
+        Es una medida se seguridad extra, en caso de que la coloques, necesitaras ingresar la contraseña cada vez que necesites usar la llave. 
+        Si haces deploy a un servidor con GIT es mejor que coloques la contraseña y bien segura.</p>
+
+      <h3>Anadiendo Repositorio remoto a Local (git remote)</h3>
+
 
 </div>
 <!-- End div -->
