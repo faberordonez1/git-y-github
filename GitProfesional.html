@@ -123,7 +123,7 @@
       </p>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5"><!-- Comandos utiles Terminal-->
       <h2>Comandos útiles de la terminal</h2>
       <p>
         <li>
@@ -148,7 +148,7 @@
       </p>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5"> <!-- Flujos de Trabajo-->
       <h2>Flujos de Trabajo con Git</h2>
       <h4>Configuracion Usuario Global Git</h4>
       <div class="alert alert-dark">
@@ -472,6 +472,8 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
 </div>
 
 
+
+
 <div class="container mt-5">
   <h2>Git Hub</h2>
   <img src="GitHub-Mark.png" width="100" alt="">
@@ -519,16 +521,16 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
             git remote -v //ver conexion remota<br>
             git remote remove origin //borra repositorio remoto<br>
             git remote set-url origin direccionRepo //modifica la conexión con el repo remoto
-Con esto cambia la URL del remote llamado “origin” ya que podemos tener varios remotes.
-
+           Con esto cambia la URL del remote llamado “origin” ya que podemos tener varios remotes.
       </samp></div>
       <p><strong>Como buenas prácticas, se recomienda lo siguiente:</strong>
-     1.El nombre del repositorio creado en Github (u otra plataforma) debe ser el mismo que el nombre de la carpeta del proyecto.<br>
-        2.Primero crear el repositorio remoto en Github, luego clonarlo al repositorio local en tu máquina y de ahí empezar a trabajar<br></p>
+            1.El nombre del repositorio creado en Github (u otra plataforma) debe ser el mismo que el nombre de la carpeta del proyecto.<br>
+           2.Primero crear el repositorio remoto en Github, luego clonarlo al repositorio local en tu máquina y de ahí empezar a trabajar<br>
+      </p>
 
 
     <h3>Traer cambios de Repositorios remoto (git pull/fetch)</h3>
-    <h4>1. fetch</h4>
+    <h4>1. Fetch</h4>
     <p>Decarga cambios del repositorio remoto</p>
     <li>origin: Nombre del repo remoto en Local</li>
     <li>master: Rama traer de repositorio</li>
@@ -542,10 +544,43 @@ Con esto cambia la URL del remote llamado “origin” ya que podemos tener vari
     <div class="alert alert-dark"><samp>git pull origin master // traer cambios del repo remoto y mezclar  </samp></div>
 
 
+    <h3>Enviar Cambios al repositorio remoto (git push)</h3>
+     <p>Antes de enviar cambios al repositorio es necesario traer los archivos del repositorio remoto 
+        y mezclar, esto con el fin de evitar conflictos al hacer push. Tambien debemos enviar nuestras tags y Otras
+         ramas
+     </p>
+     <div class="alert alert-dark"><samp>
+        git push origin master //empuja archivos de la rama master a repoRemoto<br>
+        git push origin master --tags //empuja tag a repoRemoto<br>
+        git push origin nombreRama //empuja rama seleccionada a repoRemoto<br>
+        git push origin ramaLocal : ramaRemotaDestino // Enviar desde una rama local cualquiera a una rama cualquiera remota<br>
+     </samp></div>
 
+     <h3>Explorando GitHub</h3>
+     <ul>
+       <li>Podemos calificar los proyectos que hemos creado. </li>
+       <li>Podemos ver las estadísticas de nuestro proyecto.</li>
+       <li>También las personas que le han hecho fork.     </li>
+       <li>Podemos proteger ciertas ramas del proyecto. Recomendacion proteger master</li>
+    <li>Web Hooks.: Agregar Servicios auto deploy a GitHub (AWS etc)</li>
+    <li>Issues Son la forma en que manejamos nuestros problemas, bugs en github</li>
+    <li>Pull Request Solicitudes de cambios</li>
+    
+    <br>
+    <p>Al crear un “issue” o un “pull request”, github te permite incluir etiquetas en los mismos. 
+      Entre las etiquetas que nos pueden interesar a los que estamos comenzando a usar la plataforma 
+      se encuentran “help wanted” y “good first issue”. Github anima a los desarrolladores a que marquen
+       los “issue” y los “pull request” que son más aptos para los que inician en este mundo con estas 
+       etiquetas y adicionalmente se pide a la comunidad que den un apoyo especial para estos issue/pull
+        request. ¿Quiéres comenzar a colaborar en un proyecto real en Github pero aún te sientes 
+        inseguro con tus conocimientos? Haz una búsqueda de estás etiquetas y encontrarás miles de 
+        oportunidades para hacer tu primer aporte.</p>
+  </ul>
+
+  <h3>GitHub Projects, el SCRUM de GitHub</h3>
 </div>
-<!-- End div -->
-    </div>
+
+    </div> <!-- End div main-->
 
     <div class="alert alert-dark"><samp> ghgh </samp></div>
   </body>
