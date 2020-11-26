@@ -636,9 +636,13 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
   <p> Es un proceso mediante el cual un tercero, puede hacer peticiones para incorporar modificaciones al
     proyecto principal sobre el que se está trabajando. Este es el flujo natural, por no decir la manera 
     por defecto en que funciona el trabajo colaborativo, en github, y otras plataformas basadas en git.
-  <strong>Por lo general master debe estar protegido y se debe trabajar con otra rama</strong></p>
- 
-    <ul><li>Asigna reviewers, responsables etc.</li></ul>
+  <strong>Por lo general master debe estar protegido y a</strong></p>
+  <ul>
+      <li>Se trabaja con una rama diferente a master ya que master debe estar protegida</li>
+      <li>El pull request se genera o solicita al comparar para mezclar 1 rama con master</li>
+      <li>Debes Asignar reviewers en gitHub para que aprueben el pull request y mezclen con master,
+          ya que no puedes revisar tu propio codigo</li>
+  </ul>
 
     <P><STRONG> 	Consejos </STRONG><br>
       1.- Si eres el dueño del repositorio, debes protejer la rama master, para que siempre alguien externo, pida permiso, para hacer aportes al repo, esto evita que se puedan hacer inyecciones de cambios de manera directa, sin nuestra supervisión.
