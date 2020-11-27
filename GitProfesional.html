@@ -561,7 +561,7 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
        <li>Podemos calificar los proyectos que hemos creado. </li>
        <li>Podemos ver las estadísticas de nuestro proyecto.</li>
        <li>También las personas que le han hecho fork.     </li>
-       <li>Podemos proteger ciertas ramas del proyecto. Recomendacion proteger master</li>
+       <li>Podemos proteger ciertas ramas del proyecto. Recomendacion proteger master (settings>branches)</li>
     <li>Web Hooks.: Agregar Servicios auto deploy a GitHub (AWS etc)</li>
     <li>Issues Son la forma en que manejamos nuestros problemas, bugs en github</li>
     <li>Pull Request Solicitudes de cambios</li>
@@ -627,9 +627,26 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
   cuando vuelva a ser posible hacerlo, actualizar la rama y abrir una nueva pull request.</p>
 
   <h3> Ignorando archivos (.gitignore)</h3>
-  Si tienes archivos que no pueden ser públicos, como archivos de configuración con contraseñas, 
-  lo ideal es que no los   subas a tu repositorio, estos archivos los puedes poner 
-  en el archivo .gitignore y asi no seran tenidos en cuenta por git.
+  <p>Si tienes archivos que no pueden ser públicos, como archivos de configuración con contraseñas,
+  lo ideal es que no los   subas a tu repositorio, estos archivos los puedes poner
+  en el archivo .gitignore y asi no seran tenidos en cuenta por git.</p>
+  <div class="alert alert-dark"><samp> <a href="http://gitignore.io" target="_blank">gitignore.io</a>  // Guia de archivos a ignorar segun proyecto o lenguaje </samp></div>
+
+  <h3>Colabora Proyectos Externos (Pull Request)</h3>
+  <p> Es un proceso mediante el cual un tercero, puede hacer peticiones para incorporar modificaciones al
+    proyecto principal sobre el que se está trabajando. Este es el flujo natural, por no decir la manera 
+    por defecto en que funciona el trabajo colaborativo, en github, y otras plataformas basadas en git.
+  <strong>Por lo general master debe estar protegido y a</strong></p>
+  <ul>
+      <li>Se trabaja con una rama diferente a master ya que master debe estar protegida</li>
+      <li>El pull request se genera o solicita al comparar para mezclar 1 rama con master</li>
+      <li>Debes Asignar reviewers en gitHub para que aprueben el pull request y mezclen con master,
+          ya que no puedes revisar tu propio codigo</li>
+  </ul>
+
+    <P><STRONG> 	Consejos </STRONG><br>
+      1.- Si eres el dueño del repositorio, debes protejer la rama master, para que siempre alguien externo, pida permiso, para hacer aportes al repo, esto evita que se puedan hacer inyecciones de cambios de manera directa, sin nuestra supervisión.
+     <br><br> 2.-Hacer una plantilla dónde, el que va a hacer el aporte detalle aquellas modificaciones que realizo, esto es, para agilizar el flujo colaborativo, y optimizar los procesos de producción de software.</P>
 
 </div>
 
