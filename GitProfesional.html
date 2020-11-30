@@ -636,19 +636,49 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
   <p> Es un proceso mediante el cual un tercero, puede hacer peticiones para incorporar modificaciones al
     proyecto principal sobre el que se está trabajando. Este es el flujo natural, por no decir la manera 
     por defecto en que funciona el trabajo colaborativo, en github, y otras plataformas basadas en git.
-  <strong>Por lo general master debe estar protegido y a</strong></p>
+  <strong>Por lo general master debe estar protegido. </strong>Un Pull Request es una solicitud para 
+  que un reviewer revise y apruebe los cambios que estas proponiendo para posteriormente mezclarlos con master</p>
   <ul>
       <li>Se trabaja con una rama diferente a master ya que master debe estar protegida</li>
       <li>El pull request se genera o solicita al comparar para mezclar 1 rama con master</li>
-      <li>Debes Asignar reviewers en gitHub para que aprueben el pull request y mezclen con master,
+      <li>Debes Asignar reviewers en gitHub para que te aprueben los pull request y mezclen con master,
           ya que no puedes revisar tu propio codigo</li>
-  </ul>
+     <li>Si eres reviewer de un pull request puedes revisar los cambios con la opcion (add your review o en file changed)
+     y comentar lineas de codigo o comentario general para solicitar mas indicaciones a la persona que 
+     solicito el review o en su defecto tambien puedes comentar y solicitar cambios</li>
+  <li>Si eres reviewer puedes aprobar cambios con la opcion approve , submit review, merge pull request, confirm merge</li>
+    </ul>
 
     <P><STRONG> 	Consejos </STRONG><br>
       1.- Si eres el dueño del repositorio, debes protejer la rama master, para que siempre alguien externo, pida permiso, para hacer aportes al repo, esto evita que se puedan hacer inyecciones de cambios de manera directa, sin nuestra supervisión.
      <br><br> 2.-Hacer una plantilla dónde, el que va a hacer el aporte detalle aquellas modificaciones que realizo, esto es, para agilizar el flujo colaborativo, y optimizar los procesos de producción de software.</P>
 
-</div>
+    <h3>Reportando y monitoreando errores eficientemente (Issues y Milestones)</h3>
+    <p>
+      <strong>Issues : </strong> Generalmente se utilizan para reportar Bugs, features (mejoras) adicionales o  sugerir algún cambio al repositorio.<br>
+<strong>Milestones : </strong> Forma para agrupar Issues o Pull Request puedes asignarle fecha de inicio y finalizacion y te indican el avance porcentual
+    </p>
+    <p><strong>Crear labels y milestone</strong><br></br> 
+      Labels: Podemos crear nuevas labels de acuerdo a nuestras necesidades en la seccion edit labels<br>
+    Milestones: Se crean en la pestaña Issues; Milestones y despues de creados se seleccionan dentro del issue, puedes asignar fecha de caducidad o para completar
+  </p>
+  <p><strong>Nota: </strong> Para cerrar un Issue debemos ingresar al issue, escribimos el comentario y seleccionamos comentar y close issue</p>
+  <div class="alert alert-dark"><samp> Win + . // Abrir emogi github </samp></div>
+
+
+  <h3>GitHub Pages Hosting gratuito paginas estaticas </h3>
+  <p>GitHub nos permite publicar nuestros proyectos a tráves de GitHub Pages.
+    Los GitHubs pages almacenan código estático.</p>
+    <h5>Paso a Paso</h5>
+    <ol>
+      <li>Ir a Setting</li>
+      <li>Scroll hasta github pages</li>
+      <li>Seleccionamos la rama a utilizar siempre toma el archivo index.html</li>
+      <li>Click en guardar y nos aparece el link del sitio</li>
+    </ol>
+    <p>Siempre github pages puede tardar un poco para crear todo en ocasiones funciona luego de una hora después mientras se actualizan los dns</p>
+    <h4>Configurando dominio propio a github pages</h4>
+  </div>
 
     </div> <!-- End div main-->
 
