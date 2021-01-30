@@ -543,7 +543,11 @@ Algunas veces se abre el editor para confirmar el nombre del commit de fusion, b
     </samp></div>
     <h4>2.Pull</h4>
     <p>Decarga los cambios y los mezcla a la vez</p>
-    <div class="alert alert-dark"><samp>git pull origin master // traer cambios del repo remoto y mezclar  </samp></div>
+    <div class="alert alert-dark">
+        <samp>git pull origin master // traer cambios del repo remoto y mezclar <br>
+              git pull origin master --allow-unrelated-histories // igual al anterior en caso de que muestre error porque en ambos hay comits que no se reconocen (fatal:refusing to merge unrelated histories)
+        </samp>
+      </div>
 
 
     <h3>Enviar Cambios al repositorio remoto (git push)</h3>
